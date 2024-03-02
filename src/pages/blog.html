@@ -1,0 +1,53 @@
+---
+layout: 'base.html'
+description: 'Meta description for the page'
+metaTitle: 'Title that shows up on google searches'
+tagTitle: 'Blog'
+preloadImg: '/images/cabinets2-1920w.webp'
+preloadCSS: '/css/blog.css'
+permalink: 'blog/'
+eleventyNavigation:
+    key: Blog
+    order: 500
+---
+
+<!-- Enter html code below -->
+<!-- ============================================ -->
+<!--                    LANDING                   -->
+<!-- ============================================ -->
+
+<section id="int-hero">
+    <h1 id="home-h">Blog</h1>
+    {% image './src/images/cabinets2.jpg', 'cabinets', '', 'lazy', '(max-width: 850px) 850px, 1920px'%}
+</section>
+
+<!-- ============================================ -->
+<!--              Main Blog Content               -->
+<!-- ============================================ -->
+
+<div class="blog-container main-content-wrapper">
+    <!--Main content -->
+    <div class="main-content">
+        <!-- ============================================ -->
+        <!--                 Blog Articles                -->
+        <!-- ============================================ -->
+
+        {% if collections.post | length == 0 %}
+            <h1>No Recent Posts</h1>
+        {% endif %}
+        {%- for post in collections.post | reverse -%}
+            <article class="recent-articles">
+                <!--Main Article Image-->
+                <picture class="blog-mainImage">
+                    <img
+                        src="{{ post.data.image }}"
+                        alt="{{ post.data.imageAlt }}"
+                        width="795"
+                        height="400"
+                        decoding="async"
+/>
+                </picture>
+            </article>
+        {%- endfor -%}
+    </div>
+</div>

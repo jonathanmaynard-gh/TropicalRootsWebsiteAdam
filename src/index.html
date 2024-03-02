@@ -1,0 +1,310 @@
+---
+layout: 'base.html'
+description: 'Meta description for the page'
+metaTitle: 'Title that shows up on google searches'
+tagTitle: 'Pixel Perfect Websites'
+preloadImg: '/images/landing-1920w.webp'
+preloadCSS: '/css/local.css'
+permalink: '/'
+eleventyNavigation:
+  key: Home
+  order: 100
+---
+<!-- Enter html code below -->
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero">
+  <div class="cs-container">
+    <div class="cs-flex-group">
+      <span class="cs-topper">Tropical Roots Exteriors</span>
+      <h1 class="cs-title">Elevate Your Outdoor Living</h1>
+      <p class="cs-text">
+        Expert craftsmanship in pergolas, pavilions, composite decks, and outdoor kitchens to transform your backyard into a paradise.
+      </p>
+      <a href="" class="cs-button-solid">Get An Estimate Now</a>
+    </div>
+  </div>
+
+  <!-- Background Image -->
+  {% image './src/images/landing.jpg', 'mountains', 'cs-picture', 'eager', '(max-width: 400px) 400px, (max-width: 850px) 850px, 1920px'%}
+</section>
+
+<!-- ============================================ -->
+<!--                  Services                    -->
+<!-- ============================================ -->
+
+<section id="services" class="services">
+  <!-- Get Icons From flaticon.com -->
+  <div class="card">
+    <picture>
+      <img
+        aria-hidden="true"
+        decoding="async"
+        src="/assets/svgs/service1.svg"
+        alt="appliance"
+        width="48"
+        height="48"
+/>
+    </picture>
+    <h2>Pergolas & Pavillions</h2>
+    <p>Enhance your backyard with custom-designed pergolas and pavillions that provide shade and style.</p>
+  </div>
+  <div class="card">
+    <picture>
+      <img
+        aria-hidden="true"
+        decoding="async"
+        src="/assets/svgs/service2.svg"
+        alt="appliance"
+        width="48"
+        height="48"
+/>
+    </picture>
+    <h2>Composite Decks</h2>
+    <p>Build your dream outdoor space with durable and low-maintenance composite decking.</p>
+  </div>
+  <div class="card">
+    <picture>
+      <img
+        aria-hidden="true"
+        decoding="async"
+        src="/assets/svgs/service3.svg"
+        alt="appliance"
+        width="48"
+        height="48"
+/>
+    </picture>
+    <h2>Outdoor Kitchens</h2>
+    <p>Turn your patio into a gourmet kitchen with custom outdoor cooking and dining solutions.</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                 Side By Side                 -->
+<!-- ============================================ -->
+
+<section id="sbs">
+  <div class="cs-container">
+    <!-- Left Image Section -->
+    <div class="cs-left">
+      {% image './src/images/cabinets2.jpg', 'house', 'cs-picture cs-picture1', 'lazy'%}
+      {% image './src/images/construction.jpg', 'house', 'cs-picture cs-picture2', 'lazy'%}
+    </div>
+    <!-- Right Content Section-->
+    <div class="cs-right">
+      <span class="cs-topper">About Us</span>
+      <h2 class="cs-title">About Tropical Roots Exteriors</h2>
+      <p class="cs-text">
+        At Tropical Roots Exteriors, we are passionate about transforming outdoor spaces into exceptional living areas that reflect your lifestyle 
+        and enhance your home's value. With over a decade of expertise in designing and creating beautiful, functional exteriors, we specialize in 
+        custom pergolas and pavilions, durable composite decks, and fully-equipped outdoor kitchens. Our commitment to quality craftsmanship and 
+        sustainable materials ensures that every project we undertake is built to last, providing you with a space you'll love for years to come.
+      </p>
+      <p class="cs-text">
+        Based in Brevard County, our team of experienced designers and craftsmen work closely with you to bring your vision to life, tailoring each 
+        project to your specific needs and preferences. From the initial design consultation to the final installation, we pride ourselves on our 
+        attention to detail, exceptional customer service, and dedication to creating outdoor living spaces that are not only beautiful but also 
+        functional and environmentally friendly. Let Tropical Roots Exteriors turn your backyard into your personal oasis.
+      </p>
+      <div class="cs-flex-group">
+        <p class="cs-flex-p">
+          "[Optional] Quote From You Here About Company Value/Quality"
+        </p>
+        <span class="cs-name">[Optional] Adam</span>
+        <span class="cs-job">[Optional] CEO-Founder</span>
+        <img
+          class="cs-quote-icon"
+          loading="lazy"
+          decoding="async"
+          src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
+          alt="gavel"
+          width="136"
+          height="77"
+/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--            Extra Content To Rank             -->
+<!-- ============================================ -->
+
+<section id="sbs-r">
+  <div class="cs-container">
+    <!-- Left Image Section -->
+    <div class="cs-left">
+      {% image './src/images/construction.jpg', 'house', 'cs-picture cs-picture1', 'lazy'%}
+      {% image './src/images/cabinets2.jpg', 'house', 'cs-picture cs-picture2', 'lazy'%}
+    </div>
+    <!-- Right Content Section-->
+    <div class="cs-right">
+      <span class="cs-topper">Outdoor Kitchens</span>
+      <h2 class="cs-title">Outdoor Kitchens: The Heart of Your Backyard Oasis</h2>
+      <p class="cs-text">
+        Transform your outdoor area with Tropical Roots Exteriors. Our custom outdoor kitchens are designed for your unique lifestyle, perfect for 
+        both elegant dinners and casual barbecues.
+      </p>
+      <p class="cs-text">
+        We prioritize quality and durability, using top-tier materials and appliances. Let our experts tailor your outdoor kitchen to fit your 
+        vision of luxury outdoor living.
+      </p>
+      <a href="" class="button-solid">Learn More About Thing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Gallery                    -->
+<!-- ============================================ -->
+
+<section id="gallery">
+  <div class="cs-container">
+    <span class="cs-topper">Our Portfolio</span>
+    <h2 class="cs-title">Elevating Outdoor Living Spaces</h2>
+    <div class="cs-image-group">
+      <!-- Row 1-->
+      <div class="cs-row cs-row-1">
+        {% image './src/images/portfolio/port1.jpg', 'new hallway', 'cs-picture cs-picture-1', 'lazy', '(max-width: 600px) 200px, 400px'%}
+        {% image './src/images/portfolio/port4.jpg', 'new home construction', 'cs-picture cs-picture-2', 'lazy', '(max-width: 600px) 200px, 400px'%}
+        {% image './src/images/portfolio/port7.jpg', 'building a new wall', 'cs-picture cs-picture-3', 'lazy', '(max-width: 600px) 200px, 400px'%}
+        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+      </div>
+      <!-- Row 2 -->
+      <div class="cs-row cs-row-2">
+        {% image './src/images/portfolio/port2.jpg', 'new kitchen', 'cs-picture cs-picture-1', 'lazy', '(max-width: 600px) 200px, 400px'%}
+        {% image './src/images/portfolio/port5.jpg', 'apartment addition', 'cs-picture cs-picture-2', 'lazy', '(max-width: 600px) 200px, 400px'%}
+        {% image './src/images/portfolio/port8.jpg', 'kew kitchen cabinets', 'cs-picture cs-picture-3', 'lazy', '(max-width: 600px) 200px, 400px'%}
+        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+      </div>
+      <!-- Row 3 -->
+      <div class="cs-row cs-row-3">
+        {% image './src/images/portfolio/port3.jpg', 'new kitchen', 'cs-picture cs-picture-1', 'lazy', '(max-width: 600px) 200px, 400px'%}
+        {% image './src/images/portfolio/port6.jpg', 'apartment addition', 'cs-picture cs-picture-2', 'lazy', '(max-width: 600px) 200px, 400px'%}
+        {% image './src/images/portfolio/port9.jpg', 'kew kitchen cabinets', 'cs-picture cs-picture-3', 'lazy', '(max-width: 600px) 200px, 400px'%}
+
+        <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+      </div>
+    </div>
+    <a href="/projects" class="button-solid">View Full Gallery</a>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Reviews                    -->
+<!-- ============================================ -->
+
+<section id="reviews">
+  <div class="cs-container">
+    <span class="cs-topper">Our Reviews</span>
+    <h2 class="cs-title">Words From Our Customers</h2>
+    <p class="cs-text">
+      Hear from our customers and see why they love their new outdoor spaces. From stunning kitchens to tranquil pergolas, our work speaks for 
+      itself in beauty, functionality, and quality. Experience the Tropical Roots Exteriors difference.
+    </p>
+    <ul class="cs-card-group">
+      <!-- Review 1 -->
+      <li class="cs-item">
+        <img
+          class="cs-item-img"
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile5.png"
+          alt="profile picture"
+          width="80"
+          height="80"
+/>
+        <p class="cs-item-p">
+          Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna
+          pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa
+          urna, volutpat orci imperdiet eget eget.
+        </p>
+        <span class="cs-reviewer">
+          Jon Doe
+          <span class="cs-desc">Homeowner</span>
+        </span>
+        <img
+          class="cs-item-stars"
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+          alt="stars"
+          width="96"
+          height="16"
+/>
+      </li>
+      <!-- Review 2 -->
+      <li class="cs-item">
+        <img
+          class="cs-item-img"
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png"
+          alt="profile picture"
+          width="80"
+          height="80"
+/>
+        <p class="cs-item-p">
+          Dictum dolor, nullam morbi sem in auctor proin. Consequat dolor habitasse nam sed tempor. Viverra magna
+          pharetra rhoncus, nec sed ullamcorper lectus et. Auctor velit diam fermentum consequat. Feugiat viverra massa
+          urna, volutpat orci imperdiet eget eget.
+        </p>
+        <span class="cs-reviewer">
+          Jane Doe
+          <span class="cs-desc">Homeowner</span>
+        </span>
+        <img
+          class="cs-item-stars"
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+          alt="stars"
+          width="96"
+          height="16"
+/>
+      </li>
+    </ul>
+    <a aria-label="read more reviews" href="/reviews" class="button-solid">Read More</a>
+  </div>
+</section>
+<!-- ============================================ -->
+<!--             Final Call to Action             -->
+<!-- ============================================ -->
+
+<section id="cta">
+  <div class="container">
+    <h2 class="title">
+      Get It Done <br/>
+      With Us Today
+    </h2>
+    <p>
+      Ready to bring your outdoor dreams to life? Connect with us today and take the first step towards your luxury outdoor oasis. Let Tropical Roots Exteriors turn your vision into reality. Click here to start your transformation!
+    </p>
+    <a href="/contact" class="button-solid">Get an Estimate Now</a>
+  </div>
+  {% image './src/images/cabinets2.jpg', 'kitchen cabinets', '', 'lazy', '(max-width: 400px) 400px, (max-width: 850px) 850px, 1920px'%}
+</section>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window
+      .netlifyIdentity
+      .on('init', (user) => {
+        if (!user) {
+          window
+            .netlifyIdentity
+            .on('login', () => {
+              document.location.href = '/admin/';
+            });
+        }
+      });
+  }
+</script>

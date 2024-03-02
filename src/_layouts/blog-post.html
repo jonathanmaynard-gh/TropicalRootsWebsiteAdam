@@ -1,0 +1,48 @@
+---
+layout: 'base.html'
+preloadCSS: '/css/blog.css'
+eleventyComputed:
+    description: '{{ blogDescription }}'
+    metaTitle: '{{ blogTitle }}'
+    tagTitle: '{{ titleTag }}'
+    preloadImg: '{{ image }}'
+    permalink: '/blog/{{ pageName | slug }}/index.html'
+---
+
+<!-- ============================================ -->
+<!--                    LANDING                   -->
+<!-- ============================================ -->
+
+<section id="int-hero">
+    {% image './src/images/cabinets2.jpg', 'cabinets', '', 'lazy', '(max-width: 850px) 850px, 1920px'%}
+</section>
+
+<!-- ============================================ -->
+<!--              Main Blog Content               -->
+<!-- ============================================ -->
+
+<div class="blog-container main-content-wrapper">
+    <!--Main content -->
+    <div class="main-content">
+        <!-- ============================================ -->
+        <!--                  Blog Article                -->
+        <!-- ============================================ -->
+
+        <article class="blog-article">
+            <!--Main Article Image-->
+            <picture class="blog-mainImage">
+                <img src="{{ image }}" alt="{{ imageAlt }}" width="795" height="400" decoding="async"/>
+            </picture>
+            <section id="blog-content">
+                {{ content | safe }}
+            </section>
+        </article>
+    </div>
+    <!-- End .main-content -->
+
+    <!-- ============================================ -->
+    <!--                   Sidebar                    -->
+    <!-- ============================================ -->
+
+    {% include 'featured-post.html' %}
+</div>

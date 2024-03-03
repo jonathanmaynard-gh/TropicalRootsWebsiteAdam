@@ -190,9 +190,6 @@
   #navigation .logo .light {
     display: none;
   }
-  #navigation .logo .dark {
-    display: block;
-  }
   #navigation .hamburger-menu {
     position: absolute;
     right: 0rem;

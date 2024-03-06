@@ -4,12 +4,12 @@
 /* Mobile */
 @media only screen and (min-width: 0em) {
   :root {
-    --primary: #FAFBFC;
-    --primaryShade: #FAFBFC;
-    --primaryDark: #FAFBFC;
-    --bodyTextColor: #FAFBFC;
+    --primary: #4CBB17;
+    --primaryShade: #ffd675;
+    --primaryDark: #805d0d;
+    --bodyTextColor: #4E4B66;
     --bodyTextColorWhite: #FAFBFC;
-    --headerColor: #FAFBFC;
+    --headerColor: #1a1a1a;
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */

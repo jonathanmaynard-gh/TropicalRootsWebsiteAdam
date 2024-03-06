@@ -156,6 +156,7 @@
 <---         Navigation         -->
 <--- -------------------------- -*/
 /* Mobile - Top Drop Down */
+/* Mobile - Top Drop Down */
 @media only screen and (max-width: 1023px) {
   #navigation {
     position: fixed;
@@ -189,6 +190,9 @@
   }
   #navigation .logo .light {
     display: none;
+  }
+  #navigation .logo .dark {
+    display: block;
   }
   #navigation .hamburger-menu {
     position: absolute;
@@ -316,17 +320,17 @@
     content: '';
     position: absolute;
     display: block;
-    height: .5rem;
+    height: 0.5rem;
     background: var(--primary);
     opacity: 1;
-    bottom: -.5rem;
+    bottom: 5rem;
     border-radius: 0.25rem;
     left: -0.375rem;
     right: -0.375rem;
     z-index: -1;
   }
   #navigation #navbar-menu.open {
-    height: 24.25rem;
+    height: 22.25rem;
     padding-top: 1.25rem;
     z-index: -100;
   }

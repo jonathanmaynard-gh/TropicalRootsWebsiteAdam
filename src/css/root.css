@@ -181,7 +181,7 @@
   }
   #navigation .logo {
     display: inline-block;
-    height: 3.875rem;
+    height: 4.875rem;
     width: auto;
   }
   #navigation .logo img {
@@ -330,8 +330,8 @@
     z-index: -1;
   }
   #navigation #navbar-menu.open {
-    height: 25.75rem;
-    padding-top: 3.25rem;
+    height: 26.75rem;
+    padding-top: 4.25rem;
     z-index: -100;
   }
   #navigation #navbar-menu.open ul li {

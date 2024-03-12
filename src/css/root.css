@@ -45,10 +45,17 @@
     /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
 
-  .kaushan-script-regular {
+  .kaushan-script-hero-span {
     font-family: "Kaushan Script", cursive;
     font-weight: 400;
     font-size: clamp(2rem, 4.6vw, 6rem);
+    color: #4CBB17;
+  }
+
+  .kaushan-script-regular-span {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-size: clamp(0.8125rem, 1.6vw, 2rem);
     color: #4CBB17;
   }
 

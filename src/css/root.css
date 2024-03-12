@@ -55,7 +55,7 @@
   .kaushan-script-regular-span {
     font-family: "Kaushan Script", cursive;
     font-weight: 400;
-    font-size: clamp(0.8125rem, 1.6vw, 2rem);
+    font-size: clamp(1.2rem, 1.6vw, 2rem);
     color: #4CBB17;
   }
 

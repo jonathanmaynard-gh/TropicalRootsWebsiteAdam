@@ -48,7 +48,7 @@
   .kaushan-script-regular {
     font-family: "Kaushan Script", cursive;
     font-weight: 400;
-    font-size: 50px;
+    font-size: clamp(0.8125rem, 4.6vw, 6rem);
     color: #4CBB17;
   }
 

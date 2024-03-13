@@ -83,36 +83,32 @@ eleventyNavigation:
 </div>
 
 <script>
-  // Wait for the DOM to be fully loaded
   document.addEventListener('DOMContentLoaded', function() {
-    // Get the modal
-    var modal = document.getElementById("fullSizeImageModal");
+  var modal = document.getElementById("fullSizeImageModal");
+  var span = document.getElementById("closeModal");
 
-    // Get the <span> element that closes the modal
-    var span = document.getElementById("closeModal");
+  span.onclick = function() {
+    modal.style.display = "none";
+  };
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+  window.onclick = function(event) {
+    if (event.target == modal) {
       modal.style.display = "none";
-    };
+    }
+  };
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
-
-    // Attach click event listeners to images within the gallery
-    var images = document.querySelectorAll(".cs-picture img");
-    images.forEach(function(img) {
-      img.addEventListener('click', function() {
-        var fullSizeImage = document.getElementById("fullSizeImage");
-        fullSizeImage.src = this.getAttribute("data-fullsize-url") || this.src; // Adjust based on your image path setup
-        modal.style.display = "block";
-      });
+  var images = document.querySelectorAll(".cs-picture img");
+  images.forEach(function(img) {
+    img.addEventListener('click', function() {
+      var fullSizeImage = document.getElementById("fullSizeImage");
+      
+      // Attempt to use the currentSrc which respects srcset, if available
+      var highResImageUrl = this.currentSrc || this.src; // this.currentSrc respects srcset choices
+      fullSizeImage.src = highResImageUrl; 
+      modal.style.display = "block";
     });
   });
+});
 </script>
 
 

@@ -19,7 +19,7 @@
 }
 
 #closeModal {
-  color: #aaaaaa;
+  color: #FAFBFC;
   font-size: 28px;
   font-weight: bold;
   position: absolute;
@@ -34,15 +34,15 @@
   cursor: pointer;
 }
 
-/*-- -------------------------- -->
-<---          Gallery           -->
-<--- -------------------------- -*/
 /* Mobile - 360px - Contains hover animation */
 .cs-picture {
   width: 100%;
   cursor: pointer;
 }
 
+/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
 @media only screen and (min-width: 0em) {
   #gallery {
     /* Centers button */

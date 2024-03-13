@@ -101,12 +101,18 @@ eleventyNavigation:
     }
   }
 
-  // Assume you have multiple images you want to apply this functionality to
+  // Select all images that should open in the modal
   var images = document.querySelectorAll(".cs-picture img");
   images.forEach(function(img) {
     img.onclick = function() {
-      document.getElementById("fullSizeImage").src = this.src; // Assuming the clicked image's src attribute should be used
+      // Retrieve the full-size image URL from the data attribute if it exists; otherwise, use the image's src attribute
+      var fullSizeImageSrc = this.getAttribute("data-fullsize-url") || this.src;
+      var fullSizeImage = document.getElementById("fullSizeImage");
+      fullSizeImage.src = fullSizeImageSrc;
+      fullSizeImage.style.maxWidth = "100%";
+      fullSizeImage.style.maxHeight = "80vh"; // Adjust based on the desired viewport height constraint
       modal.style.display = "block";
     }
   });
 </script>
+

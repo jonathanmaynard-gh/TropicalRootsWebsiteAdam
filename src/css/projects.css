@@ -43,12 +43,12 @@
 /* Adjust modal content for smaller screens */
 @media (max-width: 600px) {
   #modalContent {
-    width: 90%; /* Use more of the screen width */
-    margin: 2.5% auto; /* Reduce margin to use more of the screen height */
+    width: 100%; /* Use more of the screen width */
+    margin: auto; /* Reduce margin to use more of the screen height */
   }
 
   #fullSizeImage {
-    max-height: 100vh; /* You might want to make the image taller on small screens */
+    max-height: 120vh; /* You might want to make the image taller on small screens */
   }
 }
 

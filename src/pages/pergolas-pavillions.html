@@ -74,3 +74,39 @@ eleventyNavigation:
   </div>
   {% image './src/images/outdoor-kitchens-portfolio/outdoor-kitchen-4.jpg', 'kitchen cabinets', '', 'lazy', '(max-width: 400px) 400px, (max-width: 850px) 850px, 1920px'%}
 </section>
+
+<div id="fullSizeImageModal" style="display:none;">
+  <div id="modalContent">
+    <span id="closeModal" style="cursor:pointer;">&times;</span>
+    <img id="fullSizeImage" src="" style="width: 100%; height: auto;"/>
+  </div>
+</div>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("fullSizeImageModal");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementById("closeModal");
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // Assume you have multiple images you want to apply this functionality to
+  var images = document.querySelectorAll(".cs-picture img");
+  images.forEach(function(img) {
+    img.onclick = function() {
+      document.getElementById("fullSizeImage").src = this.src; // Assuming the clicked image's src attribute should be used
+      modal.style.display = "block";
+    }
+  });
+</script>

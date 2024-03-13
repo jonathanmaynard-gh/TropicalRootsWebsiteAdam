@@ -48,7 +48,7 @@
   }
 
   #fullSizeImage {
-    max-height: 70vh; /* You might want to make the image taller on small screens */
+    max-height: 100vh; /* You might want to make the image taller on small screens */
   }
 }
 

@@ -44,7 +44,7 @@
 @media (max-width: 600px) {
   #modalContent {
     width: 90%; /* Use more of the screen width */
-    margin: 5% auto; /* Reduce margin to use more of the screen height */
+    margin: 2.5% auto; /* Reduce margin to use more of the screen height */
   }
 
   #fullSizeImage {

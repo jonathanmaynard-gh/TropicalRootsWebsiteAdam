@@ -1,3 +1,7 @@
+.cs-picture {
+  transform: translateY(-40px);
+}
+
 /*-- -------------------------- -->
 <---        Core Styles         -->
 <--- -------------------------- -*/
@@ -45,6 +49,13 @@
     /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
 
+  .underline-wrapper {
+    display: inline-block;
+    border-bottom: 2px solid #4CBB17; /* Adjust thickness and color as needed */
+    padding-bottom: 0px; /* Adjust spacing between text and underline */
+    margin-bottom: 25px;
+  }
+  
   .kaushan-script-hero-span {
     font-family: "Kaushan Script", cursive;
     font-weight: 400;

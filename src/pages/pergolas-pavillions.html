@@ -89,25 +89,24 @@ eleventyNavigation:
 
   span.onclick = function() {
     modal.style.display = "none";
-    document.body.classList.remove('body-modal-open');
   };
 
   window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
-      document.body.classList.remove('body-modal-open');
     }
   };
 
   var images = document.querySelectorAll(".cs-picture img");
   images.forEach(function(img) {
     img.addEventListener('click', function() {
-      document.getElementById("fullSizeImage").src = this.currentSrc || this.src;
+      var fullSizeImage = document.getElementById("fullSizeImage");
+      
+      // Attempt to use the currentSrc which respects srcset, if available
+      var highResImageUrl = this.currentSrc || this.src; // this.currentSrc respects srcset choices
+      fullSizeImage.src = highResImageUrl; 
       modal.style.display = "block";
-      document.body.classList.add('body-modal-open');
     });
   });
 });
 </script>
-
-

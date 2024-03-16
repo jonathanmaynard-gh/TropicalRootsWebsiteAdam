@@ -91,35 +91,55 @@ eleventyNavigation:
     var span = document.getElementById("closeModal");
     var images = document.querySelectorAll(".cs-picture img");
     var currentIndex = 0; // To keep track of the current image
+    var prevButton = document.getElementById("prevImage");
+    var nextButton = document.getElementById("nextImage");
 
-    // Function to show modal with the image based on index
+    function positionButtons() {
+        if (window.innerWidth <= 600) {
+            var imageRect = document.getElementById("fullSizeImage").getBoundingClientRect();
+            var offsetFromImageBottom = 20; // Distance from image bottom to the buttons
+            prevButton.style.top = (imageRect.bottom + offsetFromImageBottom) + 'px';
+            nextButton.style.top = (imageRect.bottom + offsetFromImageBottom) + 'px';
+        } else {
+            // On desktop, we reset any inline styles that may have been applied
+            prevButton.style.top = '';
+            nextButton.style.top = '';
+        }
+    }
+
     function showModal(index) {
         var highResImageUrl = images[index].currentSrc || images[index].src;
-        document.getElementById("fullSizeImage").src = highResImageUrl;
+        var fullSizeImage = document.getElementById("fullSizeImage");
+
+        fullSizeImage.onload = function() {
+            positionButtons(); // Position buttons when image is loaded
+        };
+        
+        fullSizeImage.src = highResImageUrl;
         modal.style.display = "block";
         document.body.classList.add('body-modal-open');
         currentIndex = index;
+        
+        // Position buttons for the first image load
+        positionButtons();
     }
 
-    // Attach click event to each image
     images.forEach(function(img, index) {
         img.addEventListener('click', function() {
             showModal(index);
         });
     });
 
-    // Navigation buttons
-    document.getElementById("prevImage").addEventListener('click', function() {
+    prevButton.addEventListener('click', function() {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         showModal(currentIndex);
     });
 
-    document.getElementById("nextImage").addEventListener('click', function() {
+    nextButton.addEventListener('click', function() {
         currentIndex = (currentIndex + 1) % images.length;
         showModal(currentIndex);
     });
 
-    // Close modal actions
     span.onclick = function() {
         modal.style.display = "none";
         document.body.classList.remove('body-modal-open');
@@ -127,22 +147,18 @@ eleventyNavigation:
 
     window.onclick = function(event) {
         if (event.target == modal) {
-            modal.style.display = "none";
-            document.body.classList.remove('body-modal-open');
+            span.onclick();
         }
     };
 
-    // Touch event listeners for swiping
-    let touchStartX = 0;
-    let touchEndX = 0;
+    var touchStartX = 0;
+    var touchEndX = 0;
 
     function handleSwipe() {
         if (touchEndX < touchStartX) {
-            // Swiped left, show next image
-            document.getElementById("nextImage").click();
+            nextButton.click();
         } else if (touchEndX > touchStartX) {
-            // Swiped right, show previous image
-            document.getElementById("prevImage").click();
+            prevButton.click();
         }
     }
 
@@ -154,6 +170,11 @@ eleventyNavigation:
         touchEndX = event.changedTouches[0].screenX;
         handleSwipe();
     }, false);
+
+    // Event listeners for window resize and load to handle button positioning
+    window.addEventListener('resize', positionButtons);
+    window.addEventListener('load', positionButtons);
 });
+
 
 </script>

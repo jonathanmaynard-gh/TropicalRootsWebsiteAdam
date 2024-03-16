@@ -45,53 +45,58 @@ eleventyNavigation:
 <!-- ============================================ -->
 
 <section id="services" class="services">
-  <!-- Get Icons From flaticon.com -->
-  <div class="card">
+  <!-- Pergolas & Pavilions -->
+  <a href="/pergolas-pavillions" class="card" style="text-decoration: none;">
     <picture>
       <img
         aria-hidden="true"
         decoding="async"
         src="/assets/svgs/gazebo.png"
-        alt="appliance"
+        alt="Pergola"
         width="48"
         height="48"
-/>
+      />
     </picture>
-    <h2>Pergolas & Pavillions</h2>
-    <p>Enhance your backyard with custom-designed pergolas and pavillions that provide shade and style.</p>
-  </div>
-  <div class="card">
+    <h2>Pergolas & Pavilions</h2>
+    <p>Enhance your backyard with custom-designed pergolas and pavilions that provide shade and style.</p>
+  </a>
+  
+  <!-- Composite Decks -->
+  <a href="/composite-decks" class="card" style="text-decoration: none;">
     <picture>
       <img
         aria-hidden="true"
         decoding="async"
         src="/assets/svgs/deck.png"
-        alt="appliance"
+        alt="Composite Deck"
         width="48"
         height="48"
-/>
+      />
     </picture>
     <h2>Composite Decks</h2>
     <p>Build your dream outdoor space with durable and low-maintenance composite decking.</p>
-  </div>
-  <div class="card">
+  </a>
+
+  <!-- Outdoor Kitchens -->
+  <a href="/outdoor-kitchens" class="card" style="text-decoration: none;">
     <picture>
       <img
         aria-hidden="true"
         decoding="async"
         src="/assets/svgs/service1.svg"
-        alt="appliance"
+        alt="Outdoor Kitchen"
         width="48"
         height="48"
-/>
+      />
     </picture>
     <h2>Outdoor Kitchens</h2>
     <p>Turn your patio into a gourmet kitchen with custom outdoor cooking and dining solutions.</p>
-  </div>
+  </a>
 </section>
 
+
 <!-- ============================================ -->
-<!--                 Side By Side                 -->
+<!--                 About Us                     -->
 <!-- ============================================ -->
 
 <section id="sbs">
@@ -106,23 +111,92 @@ eleventyNavigation:
       <span class="kaushan-script-regular-span">About Us</span>
       <h2 class="cs-title">About Tropical Roots Exteriors</h2>
       <p class="cs-text">
-        At Tropical Roots Exteriors, we are passionate about transforming outdoor spaces into exceptional living areas that reflect your lifestyle 
-        and enhance your home's value. With over a decade of expertise in designing and creating beautiful, functional exteriors, we specialize in 
-        custom pergolas and pavilions, durable composite decks, and fully-equipped outdoor kitchens. Our commitment to quality craftsmanship and 
-        sustainable materials ensures that every project we undertake is built to last, providing you with a space you'll love for years to come.
+        At Tropical Roots Exteriors, we are passionate about transforming outdoor spaces into exceptional 
+        living areas that reflect your lifestyle and enhance your home's value. We are experts in designing 
+        and creating beautiful, functional exteriors, and we specialize in 
+        pergolas, pavilions, durable composite decks, and fully-equipped outdoor kitchens. Our 
+        commitment to quality craftsmanship ensures that every project we 
+        undertake is built to last, providing you with a space you'll love for years to come.
       </p>
       <p class="cs-text">
-        Based in Brevard County, our team of experienced designers and craftsmen work closely with you to bring your vision to life, tailoring each 
-        project to your specific needs and preferences. From the initial design consultation to the final installation, we pride ourselves on our 
-        attention to detail, exceptional customer service, and dedication to creating outdoor living spaces that are not only beautiful but also 
-        functional and environmentally friendly. Let Tropical Roots Exteriors turn your backyard into your personal oasis.
+        Based in Brevard County for over three decades, we know Florida lifestyle, while 
+        working with our clients to bring your custom vision to life. We tailor each 
+        project to your specific needs, style, and preferences. From the initial 
+        design consultation to the final installation, we pride ourselves on our 
+        attention to detail, exceptional customer service, and dedication to creating 
+        outdoor living spaces that are not only beautiful but also 
+        functional and environmentally friendly. Let Tropical Roots Exteriors turn 
+        your backyard into your personal oasis!
       </p>
     </div>
   </div>
 </section>
 
 <!-- ============================================ -->
-<!--            Extra Content To Rank             -->
+<!--            Pergolas & Pavilions              -->
+<!-- ============================================ -->
+
+<section id="sbs-r">
+  <div class="cs-container">
+    <!-- Left Image Section -->
+    <div class="cs-left">
+      {% image './src/images/pergolas-pavillions-portfolio/pergola-pavillion-16.jpg', 'house', 'cs-picture cs-picture1', 'lazy'%}
+      {% image './src/images/outdoor-kitchens-portfolio/outdoor-kitchen-5.jpg', 'house', 'cs-picture cs-picture2', 'lazy'%}
+    </div>
+    <!-- Right Content Section-->
+    <div class="cs-right">
+      <span class="kaushan-script-regular-span">Pergolas & Pavilions</span>
+      <h2 class="cs-title">Pergolas & Pavilions: Shade, Style, Sanctuary</h2>
+      <p class="cs-text">
+        Elevate your backyard with the simple elegance of our Pergolas & Pavilions. 
+        Tropical Roots Exteriors specializes in crafting these structures to blend 
+        seamlessly with your outdoor environment, providing a stylish shade solution 
+        that becomes your personal retreat.
+      </p>
+      <p class="cs-text">
+        Delight in the added comfort and aesthetic appeal our designs bring. Whether 
+        it’s a cozy family dinner or a vibrant evening soiree, our Pergolas & 
+        Pavilions promise to enrich your outdoor experiences with their timeless 
+        charm.
+      </p>
+      <a href="/pergolas-pavillions" class="button-solid">View More Pergolas & Pavilions</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--            Composite Decks                   -->
+<!-- ============================================ -->
+
+<section id="sbs">
+  <div class="cs-container">
+    <!-- Left Image Section -->
+    <div class="cs-left">
+      {% image './src/images/outdoor-kitchens-portfolio/outdoor-kitchen-5.jpg', 'house', 'cs-picture cs-picture1', 'lazy'%}
+      {% image './src/images/pergolas-pavillions-portfolio/pergola-pavillion-16.jpg', 'house', 'cs-picture cs-picture2', 'lazy'%}
+    </div>
+    <!-- Right Content Section-->
+    <div class="cs-right">
+      <span class="kaushan-script-regular-span">Composite Decks</span>
+      <h2 class="cs-title">Composite Decks: Uncomplicated Beauty, Lasting Craftsmanship</h2>
+      <p class="cs-text">
+        Elevate your outdoor living with the adaptive elegance of Tropical Roots 
+        Exteriors' Composite Decks. Merging the classic appeal of wood with the 
+        resilience of composite materials, our decks provide a durable, low-upkeep 
+        extension of your living space.
+      </p>
+      <p class="cs-text">
+        Opt for our Composite Decks and invest in the balance of natural aesthetics 
+        and modern durability. They're the perfect stage for every backyard 
+        gathering, designed to create timeless memories without the worry of wear.
+      </p>
+      <a href="/composite-decks" class="button-solid">View More Composite Decks</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--            Outdoor Kitchens                  -->
 <!-- ============================================ -->
 
 <section id="sbs-r">
@@ -181,7 +255,7 @@ eleventyNavigation:
         <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
       </div>
     </div>
-    <a href="/3d-designs" class="button-solid">Explore Our Designs</a>
+    <a href="/3d-designs" class="button-solid">Explore Our 3D Designs</a>
   </div>
 </section>
 

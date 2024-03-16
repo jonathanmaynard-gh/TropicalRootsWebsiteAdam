@@ -12,6 +12,41 @@
 }
 
 #modalContent {
+  /* Ensure modal content is positioned relatively for absolute child positioning */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-nav {
+  /* Styling for the navigation buttons */
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 3px;
+  z-index: 10;
+}
+
+#prevImage {
+  left: -40px; /* Position the previous button on the left */
+}
+
+#nextImage {
+  right: -40px; /* Position the next button on the right */
+}
+
+.modal-nav:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Darken button on hover for better interaction feedback */
+}
+
+#modalContent {
   margin: 10% auto; /* 15% from the top and centered */
   padding: 20px;
   width: 40%; /* Could be more or less, depending on screen size */

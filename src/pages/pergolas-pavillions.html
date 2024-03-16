@@ -79,34 +79,81 @@ eleventyNavigation:
   <div id="modalContent">
     <span id="closeModal" style="cursor:pointer;">&times;</span>
     <img id="fullSizeImage" src="" style="width: 100%; height: auto;"/>
+    <button id="prevImage" class="modal-nav">&#10094;</button>
+    <button id="nextImage" class="modal-nav">&#10095;</button>
   </div>
 </div>
 
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-  var modal = document.getElementById("fullSizeImageModal");
-  var span = document.getElementById("closeModal");
+    var modal = document.getElementById("fullSizeImageModal");
+    var span = document.getElementById("closeModal");
+    var images = document.querySelectorAll(".cs-picture img");
+    var currentIndex = 0; // To keep track of the current image
 
-  span.onclick = function() {
-    modal.style.display = "none";
-  };
-
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    // Function to show modal with the image based on index
+    function showModal(index) {
+        var highResImageUrl = images[index].currentSrc || images[index].src;
+        document.getElementById("fullSizeImage").src = highResImageUrl;
+        modal.style.display = "block";
+        document.body.classList.add('body-modal-open');
+        currentIndex = index;
     }
-  };
 
-  var images = document.querySelectorAll(".cs-picture img");
-  images.forEach(function(img) {
-    img.addEventListener('click', function() {
-      var fullSizeImage = document.getElementById("fullSizeImage");
-      
-      // Attempt to use the currentSrc which respects srcset, if available
-      var highResImageUrl = this.currentSrc || this.src; // this.currentSrc respects srcset choices
-      fullSizeImage.src = highResImageUrl; 
-      modal.style.display = "block";
+    // Attach click event to each image
+    images.forEach(function(img, index) {
+        img.addEventListener('click', function() {
+            showModal(index);
+        });
     });
-  });
+
+    // Navigation buttons
+    document.getElementById("prevImage").addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showModal(currentIndex);
+    });
+
+    document.getElementById("nextImage").addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showModal(currentIndex);
+    });
+
+    // Close modal actions
+    span.onclick = function() {
+        modal.style.display = "none";
+        document.body.classList.remove('body-modal-open');
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            document.body.classList.remove('body-modal-open');
+        }
+    };
+
+    // Touch event listeners for swiping
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX) {
+            // Swiped left, show next image
+            document.getElementById("nextImage").click();
+        } else if (touchEndX > touchStartX) {
+            // Swiped right, show previous image
+            document.getElementById("prevImage").click();
+        }
+    }
+
+    modal.addEventListener('touchstart', function(event) {
+        touchStartX = event.changedTouches[0].screenX;
+    }, false);
+
+    modal.addEventListener('touchend', function(event) {
+        touchEndX = event.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
 });
+
 </script>

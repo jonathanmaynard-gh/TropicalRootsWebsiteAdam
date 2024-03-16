@@ -80,35 +80,101 @@ eleventyNavigation:
   <div id="modalContent">
     <span id="closeModal" style="cursor:pointer;">&times;</span>
     <img id="fullSizeImage" src="" style="width: 100%; height: auto;"/>
+    <button id="prevImage" class="modal-nav">&#10094;</button>
+    <button id="nextImage" class="modal-nav">&#10095;</button>
   </div>
 </div>
 
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-  var modal = document.getElementById("fullSizeImageModal");
-  var span = document.getElementById("closeModal");
+    var modal = document.getElementById("fullSizeImageModal");
+    var span = document.getElementById("closeModal");
+    var images = document.querySelectorAll(".cs-picture img");
+    var currentIndex = 0; // To keep track of the current image
+    var prevButton = document.getElementById("prevImage");
+    var nextButton = document.getElementById("nextImage");
 
-  span.onclick = function() {
-    modal.style.display = "none";
-  };
-
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    function positionButtons() {
+        if (window.innerWidth <= 600) {
+            var imageRect = document.getElementById("fullSizeImage").getBoundingClientRect();
+            var offsetFromImageBottom = 20; // Distance from image bottom to the buttons
+            prevButton.style.top = (imageRect.bottom + offsetFromImageBottom) + 'px';
+            nextButton.style.top = (imageRect.bottom + offsetFromImageBottom) + 'px';
+        } else {
+            // On desktop, we reset any inline styles that may have been applied
+            prevButton.style.top = '';
+            nextButton.style.top = '';
+        }
     }
-  };
 
-  var images = document.querySelectorAll(".cs-picture img");
-  images.forEach(function(img) {
-    img.addEventListener('click', function() {
-      var fullSizeImage = document.getElementById("fullSizeImage");
-      
-      // Attempt to use the currentSrc which respects srcset, if available
-      var highResImageUrl = this.currentSrc || this.src; // this.currentSrc respects srcset choices
-      fullSizeImage.src = highResImageUrl; 
-      modal.style.display = "block";
+    function showModal(index) {
+        var highResImageUrl = images[index].currentSrc || images[index].src;
+        var fullSizeImage = document.getElementById("fullSizeImage");
+
+        fullSizeImage.onload = function() {
+            positionButtons(); // Position buttons when image is loaded
+        };
+        
+        fullSizeImage.src = highResImageUrl;
+        modal.style.display = "block";
+        document.body.classList.add('body-modal-open');
+        currentIndex = index;
+        
+        // Position buttons for the first image load
+        positionButtons();
+    }
+
+    images.forEach(function(img, index) {
+        img.addEventListener('click', function() {
+            showModal(index);
+        });
     });
-  });
+
+    prevButton.addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showModal(currentIndex);
+    });
+
+    nextButton.addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showModal(currentIndex);
+    });
+
+    span.onclick = function() {
+        modal.style.display = "none";
+        document.body.classList.remove('body-modal-open');
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            span.onclick();
+        }
+    };
+
+    var touchStartX = 0;
+    var touchEndX = 0;
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX) {
+            nextButton.click();
+        } else if (touchEndX > touchStartX) {
+            prevButton.click();
+        }
+    }
+
+    modal.addEventListener('touchstart', function(event) {
+        touchStartX = event.changedTouches[0].screenX;
+    }, false);
+
+    modal.addEventListener('touchend', function(event) {
+        touchEndX = event.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
+
+    // Event listeners for window resize and load to handle button positioning
+    window.addEventListener('resize', positionButtons);
+    window.addEventListener('load', positionButtons);
 });
 </script>
 

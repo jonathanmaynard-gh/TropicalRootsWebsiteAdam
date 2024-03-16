@@ -78,12 +78,31 @@
 /* Adjust modal content for smaller screens */
 @media (max-width: 600px) {
   #modalContent {
-    width: 100%; /* Use more of the screen width */
-    margin: auto; /* Reduce margin to use more of the screen height */
+    width: 90%; /* Adjusted for a bit of padding on the sides */
+    margin: auto;
+    flex-direction: column; /* Stack image and navigation buttons vertically */
+    align-items: center; /* Align items (image and buttons) to the center */
+    justify-content: center;
   }
 
   #fullSizeImage {
-    max-height: 120vh; /* You might want to make the image taller on small screens */
+    max-width: 100%; /* Ensure image does not exceed the modal width */
+    max-height: 120vh; /* Adjust image height to leave space for buttons */
+  }
+
+  .modal-nav {
+    position: relative; /* Use relative positioning for buttons within flex container */
+    top: 0;
+    transform: none; /* Remove vertical centering transformation */
+    margin-top: 20px; /* Add some space above the buttons */
+  }
+
+  #prevImage {
+    align-self: flex-start; /* Align the previous button to the left */
+  }
+
+  #nextImage {
+    align-self: flex-end; /* Align the next button to the right */
   }
 }
 

@@ -95,19 +95,20 @@ eleventyNavigation:
   document.addEventListener('DOMContentLoaded', function() {
     var modal = document.getElementById("fullSizeImageModal");
     var span = document.getElementById("closeModal");
-    var images = document.querySelectorAll(".cs-picture img");
-    var currentIndex = 0; // To keep track of the current image
+    // Select images within the gallery section
+    var images = document.querySelectorAll("#gallery .cs-picture img");
+    var currentIndex = 0;
     var prevButton = document.getElementById("prevImage");
     var nextButton = document.getElementById("nextImage");
 
     function positionButtons() {
         if (window.innerWidth <= 600) {
             var imageRect = document.getElementById("fullSizeImage").getBoundingClientRect();
-            var offsetFromImageBottom = 20; // Distance from image bottom to the buttons
+            var offsetFromImageBottom = 20; // Adjust this value to change the distance from the image to the buttons
             prevButton.style.top = (imageRect.bottom + offsetFromImageBottom) + 'px';
             nextButton.style.top = (imageRect.bottom + offsetFromImageBottom) + 'px';
         } else {
-            // On desktop, we reset any inline styles that may have been applied
+            // Resets the positions for desktop view
             prevButton.style.top = '';
             nextButton.style.top = '';
         }
@@ -118,16 +119,15 @@ eleventyNavigation:
         var fullSizeImage = document.getElementById("fullSizeImage");
 
         fullSizeImage.onload = function() {
-            positionButtons(); // Position buttons when image is loaded
+            positionButtons(); // Adjust the button position when the image is loaded
         };
-        
+
         fullSizeImage.src = highResImageUrl;
         modal.style.display = "block";
         document.body.classList.add('body-modal-open');
         currentIndex = index;
-        
-        // Position buttons for the first image load
-        positionButtons();
+
+        positionButtons(); // Adjust the button position for the first image load
     }
 
     images.forEach(function(img, index) {
@@ -157,13 +157,30 @@ eleventyNavigation:
         }
     };
 
+    // Keyboard navigation
+    document.addEventListener('keydown', function(event) {
+        if (modal.style.display === "block") { // Ensure the modal is displayed
+            if (event.key === 'ArrowLeft') {
+                // Left arrow key
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showModal(currentIndex);
+            } else if (event.key === 'ArrowRight') {
+                // Right arrow key
+                currentIndex = (currentIndex + 1) % images.length;
+                showModal(currentIndex);
+            }
+        }
+    });
+
     var touchStartX = 0;
     var touchEndX = 0;
 
     function handleSwipe() {
         if (touchEndX < touchStartX) {
+            // Swiped left, show next image
             nextButton.click();
         } else if (touchEndX > touchStartX) {
+            // Swiped right, show previous image
             prevButton.click();
         }
     }
@@ -177,8 +194,9 @@ eleventyNavigation:
         handleSwipe();
     }, false);
 
-    // Event listeners for window resize and load to handle button positioning
+    // Adjust button position on window resize and load
     window.addEventListener('resize', positionButtons);
     window.addEventListener('load', positionButtons);
 });
+
 </script>

@@ -61,6 +61,13 @@
     font-weight: 400;
     font-size: clamp(2rem, 4.6vw, 6rem);
     color: #4CBB17;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Prevent text overflow */
+    text-overflow: ellipsis; /* Use ellipsis for overflow */
+    display: block; /* Block display to apply width and margin */
+    min-width: 250px; /* Minimum width of the text container */
+    max-width: 100%; /* Maximum width to ensure responsiveness */
+    margin: 0 auto; /* Center the text block if needed */
   }
 
   .kaushan-script-regular-span {

@@ -1,5 +1,6 @@
 {
   "name": "Tropical Roots Exteriors",
+  "email": "adam@tropicalrootsexteriors.com",
   "phone": "321-368-8919",
   "phoneFormatted": "(321) 368-8919",
   "address": {
@@ -7,5 +8,5 @@
     "county": "BRE",
     "postcode": "32907"
   },
-  "domain": "https://tropicalrootsadam.netlify.app/"
+  "domain": "https://tropicalrootsexteriors.com"
 }

@@ -54,19 +54,21 @@
 }
 
 #closeModal {
-  color: #FAFBFC;
-  font-size: 28px;
-  font-weight: bold;
+  color: white;
   position: absolute;
-  right: 15px;
-  top: 0;
+  right: 3px; /* Adjust as needed for proper alignment */
+  top: 0px; /* Adjust as needed for proper alignment */
+  padding: 5px 12px; /* Match padding with .modal-nav */
+  font-size: 24px; /* Match font size with .modal-nav */
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black, matching .modal-nav */
+  border-radius: 3px; /* Match border radius with .modal-nav */
 }
 
 #closeModal:hover,
 #closeModal:focus {
-  color: #000;
+  background-color: rgba(0, 0, 0, 0.7); /* Darken button on hover for better interaction feedback, matching .modal-nav */
   text-decoration: none;
-  cursor: pointer;
 }
 
 /* Mobile - 360px - Contains hover animation */
